@@ -105,7 +105,7 @@
 
         /**
         * @function previous
-        * @desc decreases the current song index to play the previous song
+        * @desc decreases the current song index to play the previous song or stop playing if at the beginning of the list
         * @param none
         */
         SongPlayer.previous = function() {
@@ -123,7 +123,7 @@
 
         /**
         * @function next
-        * @desc
+        * @desc increase the current song index to play the next song or stop playin if at the end of the list
         * @param none
         */
         SongPlayer.next = function() {
