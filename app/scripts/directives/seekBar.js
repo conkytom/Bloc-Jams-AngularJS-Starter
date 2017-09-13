@@ -15,12 +15,18 @@
             return offsetXPercent;
         };
 
+        /**
+        * returns the real actions and functionality of the directives
+        */
         return {
             templateUrl: '/templates/directives/seek_bar.html',
             replace: true,
             restrict: 'E',
             scope: { },
             link: function(scope, element, attributes) {
+                /**
+                * @desc limits the range of numbers so that we can use percentages
+                */
                 scope.value = 0;
                 scope.max = 100;
 
@@ -31,6 +37,11 @@
                 */
                 var seekBar = $(element);
 
+                /**
+                * @function percentString
+                * @desc Turns the scope value into percentage for use in our seek bars
+                * @param none
+                */
                 var percentString = function () {
                     var value = scope.value;
                     var max = scope.max;
@@ -38,8 +49,22 @@
                     return percent + "%";
                 };
 
+                /**
+                * @function fillStyle
+                * @desc applies a percentage to the seek bar's fill line that can be manipulated
+                * @param none
+                */
                 scope.fillStyle = function() {
                     return {width: percentString()};
+                };
+
+                /**
+                * @function thumbStyle
+                * @desc applies a percentage to the seek bar's thumb that can be manipulated
+                * @param none
+                */
+                scope.thumbStyle = function() {
+                    return {left: percentString()};
                 };
 
                 /**
