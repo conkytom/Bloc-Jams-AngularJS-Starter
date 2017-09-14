@@ -109,9 +109,9 @@
                     });
                 };
 
-                var notifyOnChange = function(newValue) {
+                var notifyOnChange = function(nuevoValue) {
                     if (typeof scope.onChange === 'function') {
-                        scope.onChange({value: newValue});
+                        scope.onChange({property: nuevoValue});
                     }
                 };
             }
